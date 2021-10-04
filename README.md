@@ -1,3 +1,22 @@
+# All Credit to Original Author and License
+
+See the following for more:
+[https://github.com/siddharthkp/nps-i](https://github.com/siddharthkp/nps-i)
+[https://www.npmjs.com/package/nps-i](https://www.npmjs.com/package/nps-i)
+
+Also includes inspiration from [nstudio/nps-i](https://github.com/nstudio/nps-i).
+
+## Differences From Original Package
+
+* If you use an `.npmrs` or `.npmrs.json` file, it will load the `nps` config from there.
+* You can now use scripts that require user input.
+
+## Original README
+
+#### license
+
+MIT © [siddharthkp](https://github.com/siddharthkp)
+
 <p align="center">
   <img src="https://78.media.tumblr.com/240d51485c042ab5bed754294ad020c6/tumblr_msz10zJc751svwlszo2_500.gif" height="200px"/>
   <br><br>
