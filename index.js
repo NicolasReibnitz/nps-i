@@ -6,9 +6,13 @@ const fuzzy = require('fuzzy')
 const pad = require('right-pad')
 const path = require('path')
 const exec = require('./exec')
+const { existsSync, readFileSync } = require('fs');
 
-const config = path.join(process.cwd(), './package-scripts.js')
-const packageScripts = require(config).scripts
+const DEFAULT_CONFIG_PATH = './package-scripts.js';
+
+const configPath = getConfigPath();
+const config = require(configPath);
+const packageScripts = config.scripts
 
 let flatScripts = []
 
@@ -96,7 +100,8 @@ const filterScripts = (_, input) => {
 const autocompleteOptions = {
   type: 'autocomplete',
   name: 'string',
-  message: 'Which script would you like to run?\n\n',
+  message: config.message || 'Which script would you like to run?\n\n',
+  pageSize: config.pageSize || 15,
   source: filterScripts
 }
 
@@ -105,3 +110,17 @@ inquirer.prompt(autocompleteOptions).then(result => {
   const element = flatScripts.find(element => element.prettyString === result.string)
   exec(`nps ${element.name}`)
 })
+
+function getConfigPath() {
+  let configPath = DEFAULT_CONFIG_PATH;
+  try {
+    if (existsSync(path.join(process.cwd(), './.npsrc'))) {
+      configPath = JSON.parse(readFileSync(path.join(process.cwd(), './.npsrc'))).config;
+    } else if (existsSync(path.join(process.cwd(), './.npsrc.json'))) {
+      configPath = JSON.parse(readFileSync(path.join(process.cwd(), './.npsrc.json'))).config;
+    }
+  } catch (e) {
+    configPath = DEFAULT_CONFIG_PATH;
+  }
+  return configPath;
+}
