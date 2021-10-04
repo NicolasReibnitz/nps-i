@@ -1,6 +1,6 @@
 {
   "name": "@nickroberts/nps-i",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Interactive mode for nps",
   "main": "index.js",
   "bin": {
