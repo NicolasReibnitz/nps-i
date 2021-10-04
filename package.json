@@ -11,8 +11,7 @@
   "author": "siddharthkp",
   "license": "MIT",
   "dependencies": {
-    "exec": "^0.2.1",
-    "execa": "0.10.0",
+    "execa": "^1.0.0",
     "fuzzy": "0.1.3",
     "inquirer": "8.1.5",
     "inquirer-autocomplete-prompt": "1.4.0",
