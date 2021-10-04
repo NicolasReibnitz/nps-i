@@ -1,10 +1,13 @@
-# All Credit to Original Author and License
+# Interactive mode for nps
+
+**All Credit to Original Author and License**
 
 See the following for more:
-[https://github.com/siddharthkp/nps-i](https://github.com/siddharthkp/nps-i)
-[https://www.npmjs.com/package/nps-i](https://www.npmjs.com/package/nps-i)
-
-Also includes inspiration from [nstudio/nps-i](https://github.com/nstudio/nps-i).
+* [https://github.com/siddharthkp/nps-i](https://github.com/siddharthkp/nps-i)
+* [https://www.npmjs.com/package/nps-i](https://www.npmjs.com/package/nps-i)
+* [https://github.com/sezna/nps](https://github.com/sezna/nps)
+* [https://www.npmjs.com/package/nps](https://www.npmjs.com/package/nps)
+* Also includes updates / inspiration from [https://github.com/nstudio/nps-i](https://github.com/nstudio/nps-i).
 
 ## Differences From Original Package
 
