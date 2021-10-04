@@ -108,7 +108,7 @@ const autocompleteOptions = {
 inquirer.registerPrompt('autocomplete', autocomplete)
 inquirer.prompt(autocompleteOptions).then(result => {
   const element = flatScripts.find(element => element.prettyString === result.string)
-  exec(`nps -c ${configPath} ${element.name}`)
+  exec(`nps ${element.name}`)
 })
 
 function getConfigPath() {
