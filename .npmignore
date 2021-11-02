@@ -1,3 +1,5 @@
+.npsrc
 tools
 package-scripts.js
 package-lock.json
+yarn.lock
