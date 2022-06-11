@@ -1,8 +1,9 @@
 {
 	"name": "@das.laboratory/nps-i",
-	"version": "2.1.1",
+	"version": "2.1.2",
 	"description": "Interactive mode for nps",
 	"license": "MIT",
+	"repository": "git@github.com:NicolasReibnitz/nps-i.git",
 	"author": "siddharthkp",
 	"main": "index.js",
 	"bin": {
@@ -18,9 +19,8 @@
 		"version": "git add ."
 	},
 	"files": [
-		"_assets",
 		"examples",
-		"helpers"
+		"exec.js"
 	],
 	"keywords": [],
 	"dependencies": {
