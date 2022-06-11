@@ -69,3 +69,4 @@ typings/
 .npsrc
 .npsrc.json
 tools/
+.DS_Store

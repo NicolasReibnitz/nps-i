@@ -1,18 +1,95 @@
 # Interactive mode for nps
 
-**All Credit to Original Author and License**
-
-See the following for more:
-* [https://github.com/siddharthkp/nps-i](https://github.com/siddharthkp/nps-i)
-* [https://www.npmjs.com/package/nps-i](https://www.npmjs.com/package/nps-i)
-* [https://github.com/sezna/nps](https://github.com/sezna/nps)
-* [https://www.npmjs.com/package/nps](https://www.npmjs.com/package/nps)
-* Also includes updates / inspiration from [https://github.com/nstudio/nps-i](https://github.com/nstudio/nps-i).
-
 ## Differences From Original Package
 
-* If you use an `.npmrs` or `.npmrs.json` file, it will load the `nps` config from there.
-* You can now use scripts that require user input.
+-   If you use an `.npmrs` or `.npmrs.json` file, it will load the `nps` config from there.
+-   You can now use scripts that require user input.
+-   Adding `hiddenFromInteractive: true` hides a script from the menu
+-   Adding `pageSize: <number>` sets the number of options shown without scrolling
+-   Grouped scripts are divided by a seperator
+-   Scripts without description don't show 'undefined' anymore
+
+## Install
+
+```
+npm install -D @das.laboratory/nps-i
+```
+
+or install it globally
+
+```
+npm install -g @das.laboratory/nps-i
+```
+
+## Simple example
+
+**package-scripts.js:**  
+See [examples/simple/package-scripts.js](examples/simple/package-scripts.js).
+
+```
+? How can I help you today?
+
+ (Use arrow keys or type to search)
+❯ server.start        Start the server
+  server.restart      Restart the server
+  server.stop         Stop the server
+  ──────────────
+  db.commit           Diffs the local database with current migrations
+(Move up and down to reveal more choices)
+```
+
+## Fancy example
+
+**package-scripts.js:**  
+See [examples/fancy/package-scripts.js](examples/fancy/package-scripts.js).
+
+**Output:**
+
+```
+ **************************
+ ** SERVER SCRIPTS 3000™ **
+ **************************
+
+ Choose wisely...
+
+ (Use arrow keys or type to search)
+❯ server.start                  Start the server and insert dummy files into the buckets
+  server.restart                Restart the server and insert dummy files into the buckets
+  server.stop                   Stop the server
+  ──────────────
+  backup-db.full.local          Full backup of the local database
+  backup-db.full.server1        Full backup of the database on server 1
+  backup-db.full.server2        Full backup of the database on server 2
+  backup-db.full.all            Full backup of all databases
+  ──────────────
+  backup-db.schema.local        Schema backup of the local database
+  backup-db.schema.server1      Schema backup of the database on server 1
+  backup-db.schema.server2      Schema backup of the database on server 2
+  backup-db.schema.all          Schema backup of all databases
+  ──────────────
+  backup-db.data.local          Data backup of the local database
+  backup-db.data.server1        Data backup of the database on server 1
+  backup-db.data.server2        Data backup of the database on server 2
+  backup-db.data.all            Data backup of all databases
+  ──────────────
+  backup-db.split.local         Separate schema & data backup of the local database
+(Move up and down to reveal more choices)
+```
+
+## Original Authors
+
+See the following for more:
+
+-   [https://github.com/siddharthkp/nps-i](https://github.com/siddharthkp/nps-i)
+-   [https://www.npmjs.com/package/nps-i](https://www.npmjs.com/package/nps-i)
+-   [https://github.com/sezna/nps](https://github.com/sezna/nps)
+-   [https://www.npmjs.com/package/nps](https://www.npmjs.com/package/nps)
+
+Also includes updates / inspiration from:
+
+-   [https://github.com/nstudio/nps-i](https://github.com/nstudio/nps-i)
+-   [https://github.com/nickroberts/nps-i](https://github.com/nickroberts/nps-i)
+-   [https://github.com/siddharthkp/nps-i/pull/2](https://github.com/siddharthkp/nps-i/pull/2)
 
 ## Original README
 
@@ -52,9 +129,9 @@ Replace `nps` with `nps-i` in your package.json
 
 ```json
 {
-  "scripts": {
-    "start": "nps-i"
-  }
+	"scripts": {
+		"start": "nps-i"
+	}
 }
 ```
 
