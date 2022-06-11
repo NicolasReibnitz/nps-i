@@ -1,6 +1,6 @@
 {
 	"name": "@das.laboratory/nps-i",
-	"version": "2.1.0",
+	"version": "2.1.1",
 	"description": "Interactive mode for nps",
 	"license": "MIT",
 	"author": "siddharthkp",
@@ -17,6 +17,11 @@
 		"preversion": "git add .",
 		"version": "git add ."
 	},
+	"files": [
+		"_assets",
+		"examples",
+		"helpers"
+	],
 	"keywords": [],
 	"dependencies": {
 		"execa": "^1.0.0",
