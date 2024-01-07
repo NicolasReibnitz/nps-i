@@ -6,8 +6,9 @@
 -   You can now use scripts that require user input.
 -   Adding `hiddenFromInteractive: true` hides a script from the menu
 -   Adding `pageSize: <number>` sets the number of options shown without scrolling
--   Grouped scripts are divided by a seperator
+-   Grouped scripts are divided by a separator
 -   Scripts without description don't show 'undefined' anymore
+-   In ESM workspaces you can rename package-scripts file to `package-scripts.cjs` (see below).
 
 ## Install
 
@@ -20,6 +21,12 @@ or install it globally
 ```
 npm install -g @das.laboratory/nps-i
 ```
+
+## ESM projects
+
+If your workspace is set up as `module` (i.e. the nearest parent package.json contains "type": "module"), node will give you an ERR_REQUIRE_ESM error. This means that it refuses to require your `package-scripts.js` file because it assumes that all .js files are ESM modules.
+
+In this case simply rename `package-scripts.js` to `package-scripts.cjs` (note the .cjs file extension). This will tell node that the file is to be treated as a CommonJS module.
 
 ## Simple example
 

@@ -143,6 +143,8 @@ function getConfigPath() {
 			configPath = JSON.parse(readFileSync(path.join(process.cwd(), './.npsrc'))).config;
 		} else if (existsSync(path.join(process.cwd(), './.npsrc.json'))) {
 			configPath = JSON.parse(readFileSync(path.join(process.cwd(), './.npsrc.json'))).config;
+		} else if (existsSync(path.join(process.cwd(), './package-scripts.cjs'))) {
+			configPath = JSON.parse(readFileSync(path.join(process.cwd(), './package-scripts.cjs'))).config;
 		}
 	} catch (e) {
 		configPath = DEFAULT_CONFIG_PATH;

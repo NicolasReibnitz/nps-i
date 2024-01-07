@@ -1,6 +1,6 @@
 {
 	"name": "@das.laboratory/nps-i",
-	"version": "2.1.2",
+	"version": "2.2.0",
 	"description": "Interactive mode for nps",
 	"license": "MIT",
 	"repository": "git@github.com:NicolasReibnitz/nps-i.git",
