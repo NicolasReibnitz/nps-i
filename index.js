@@ -133,7 +133,7 @@ const autocompleteOptions = {
 inquirer.registerPrompt('autocomplete', autocomplete);
 inquirer.prompt(autocompleteOptions).then(result => {
 	const element = flatScripts.find(element => element.prettyString === result.string);
-	exec(`nps ${element.name}`);
+	exec(`nps -c ${configPath} ${element.name}`);
 });
 
 function getConfigPath() {
